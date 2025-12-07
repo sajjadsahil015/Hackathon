@@ -1,0 +1,32 @@
+---
+sidebar_position: 0
+slug: hardware
+title: Hardware Requirements
+description: Comparative guide for Simulation vs Edge hardware
+---
+
+import { profiles } from '@site/src/data/hardware-profiles';
+
+# Hardware Requirements
+
+To successfully complete this course, you will need access to two types of compute environments.
+
+## The Dual-Stack Approach
+
+Physical AI requires training in high-fidelity simulation (The Digital Twin) and deployment on constrained hardware (The Robot Brain).
+
+<HardwareComparison profiles={profiles} />
+
+### 1. The Digital Twin Workstation
+This machine is used for:
+- Running **NVIDIA Isaac Sim** (Requires RTX GPU)
+- Photorealistic rendering in **Unity**
+- Training Vision-Language-Action models
+- Compiling large ROS 2 workspaces
+
+### 2. The Edge AI Kit (Robot Brain)
+This computer lives inside the robot:
+- Runs **ROS 2 Humble**
+- Handles real-time sensor fusion
+- Executes the trained policy
+- **Recommended**: NVIDIA Jetson Orin series (AGX or Nano)
