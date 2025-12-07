@@ -70,7 +70,7 @@ const config: Config = {
           position: 'left',
         },
         {
-          href: 'https://github.com/interactive-robotics-textbook/interactive-robotics-textbook',
+          href: 'https://github.com/sajjadsahil015/Hackathon',
           label: 'GitHub',
           position: 'right',
         },
@@ -97,7 +97,7 @@ const config: Config = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/interactive-robotics-textbook/interactive-robotics-textbook',
+              href: 'https://github.com/sajjadsahil015/Hackathon',
             },
           ],
         },
