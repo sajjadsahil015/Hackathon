@@ -14,6 +14,35 @@ description: Topics and Services
   "Debug utilizing RQt Graph"
 ]} />
 
-## The flow of data
+## 1. The Flow of Data (Topics)
 
-Understanding how nodes talk to each other.
+**Topics** are the primary way data moves in ROS 2. It follows a **Publisher/Subscriber** model.
+- **Asynchronous**: Publishers don't know who is listening.
+- **Many-to-Many**: One topic can have multiple publishers and subscribers.
+
+### Conceptual Diagram
+
+```mermaid
+graph LR
+    A[Camera Node] -- /image_raw --> B[Computer Vision Node]
+    B -- /detected_objects --> C[Path Planner]
+```
+
+## 2. Hands-On: Pub/Sub implementation
+
+Creating a publisher that counts up.
+
+```python
+self.publisher_ = self.create_publisher(String, 'topic', 10)
+timer_period = 0.5  # seconds
+self.timer = self.create_timer(timer_period, self.timer_callback)
+```
+
+## 3. Services (Synchronous)
+
+Sometimes you need an answer *now*.
+- **Client**: Sends a request (e.g., "Reset Simulation").
+- **Server**: Processes and sends a response.
+
+### Lab Task
+Use `ros2 service call` to reset the Turtlesim background color.

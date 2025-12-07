@@ -14,6 +14,19 @@ description: Overview of Vision-Language-Action Models
   "Execute cognitive planning"
 ]} />
 
-## Bridging Language and Motion
+## 1. VLA Architecture
 
-Teaching robots to understand "Pick up the apple".
+**VLA (Vision-Language-Action)** models like Google's RT-2 or similar architectures combine:
+1.  **Vision**: Understanding the scene ("I see an apple").
+2.  **Language**: Understanding the command ("Pick up the healthy snack").
+3.  **Action**: outputting robot arm waypoints.
+
+## 2. Cognitive Planning
+
+Using LLMs (like GPT-4) as the "High Level Planner".
+*   **User**: "I spilled my drink."
+*   **LLM**: "1. Find sponge. 2. Pick up sponge. 3. Go to spill. 4. Wipe."
+
+## 3. Lab: Voice-Controlled Pick & Place
+
+Integrate **OpenAI Whisper** (Speech-to-Text) with a simple VLM API to command the simulation.

@@ -14,6 +14,33 @@ description: Actions, Parameters, and Launch Files
   "Manage multi-node systems with Launch files"
 ]} />
 
-## Orchestrating the System
+## 1. Actions: Goals with Feedback
 
-Bringing it all together into a launchable robot stack.
+Unlike Services, **Actions** are preemptable and provide feedback.
+*   **Example**: "Go to the kitchen."
+    *   *Feedback*: "Moving... 10%... 50%..."
+    *   *Cancel*: "Stop! I changed my mind."
+
+## 2. Parameters
+
+Parameters allow you to configure nodes at runtime without recompiling.
+*   `max_speed`: 2.0 m/s
+*   `camera_resolution`: 1080p
+
+## 3. Launch Files (Python)
+
+Starting 10 nodes manually is tedious. Launch files script this.
+
+```python
+from launch import LaunchDescription
+from launch_ros.actions import Node
+
+def generate_launch_description():
+    return LaunchDescription([
+        Node(
+            package='turtlesim',
+            executable='turtlesim_node',
+            name='sim'
+        ),
+    ])
+```

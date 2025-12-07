@@ -14,6 +14,18 @@ description: High Fidelity Rendering
   "Create photorealistic environments"
 ]} />
 
-## Photorealism for AI
+## 1. Why Unity?
 
-Using game engines for synthetic data generation.
+Gazebo is great for physics, but Unity offers **Game-Engine quality graphics**. This is crucial for Computer Vision tasks where lighting and texture matter.
+
+## 2. ROS-TCP-Connector
+
+Unity communicates with ROS 2 using a TCP endpoint.
+*   **Unity**: Sender/Receiver scripts (C#).
+*   **ROS 2**: `ros_tcp_endpoint` node.
+
+## 3. Lab: Visualizing Pick & Place
+
+1.  Import a robotic arm (UR3e) into Unity.
+2.  Setup the ROS subscriber for joint angles.
+3.  Publish joint angles from a ROS 2 terminal and watch the Unity arm move.

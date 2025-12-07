@@ -14,6 +14,19 @@ description: The Navigation 2 Stack
   "Send autonomous waypoints"
 ]} />
 
-## Point A to Point B
+## 1. The Nav2 Stack Architecture
 
-Path planning and obstacle avoidance.
+Nav2 is the industry standard for mobile robotics navigation.
+*   **Planner (Global)**: Dijkstra/A* algorithm to find path from A to B.
+*   **Controller (Local)**: Follows the path while avoiding dynamic obstacles (people, pets).
+*   **Costmaps**: 2D grid representing safe/unsafe areas.
+
+## 2. Costmap Layers
+
+1.  **Static Layer**: Walls (from SLAM map).
+2.  **Obstacle Layer**: Real-time Lidar data.
+3.  **Inflation Layer**: Padding around obstacles to prevent collision.
+
+## 3. Lab: Autonomous Waypoints
+
+Use the "2D Nav Goal" tool in RViz to command the robot to go to the kitchen.

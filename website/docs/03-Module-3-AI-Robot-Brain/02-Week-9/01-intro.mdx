@@ -14,6 +14,18 @@ description: Visual SLAM
   "Generate 2D and 3D occupancy grids"
 ]} />
 
-## Mapping the World
+## 1. What is SLAM?
 
-How the robot knows where it is.
+**SLAM (Simultaneous Localization and Mapping)** is the chicken-and-egg problem:
+1.  To map the room, I need to know where I am.
+2.  To know where I am, I need a map of the room.
+
+## 2. Visual SLAM (vSLAM)
+
+Using cameras (RGB-D or Stereo) to extract feature points from the environment.
+*   **Loop Closure**: Recognizing a place we've been before to correct drift.
+*   **RTAB-Map**: Real-Time Appearance-Based Mapping.
+
+## 3. Lab: Mapping the Virtual Home
+
+Drive the robot around the Unity/Isaac house environment. Watch the 3D pointcloud map build up in RViz.

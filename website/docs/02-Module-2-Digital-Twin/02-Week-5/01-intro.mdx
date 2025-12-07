@@ -14,6 +14,30 @@ description: Universal Robot Description Format
   "Visualize transformations in RViz"
 ]} />
 
-## The Body of the Robot
+## 1. URDF: The Robot's DNA
 
-Defining links, joints, and physics properties.
+**URDF (Unified Robot Description Format)** is an XML format representing a robot model.
+
+### Key Components
+*   **Links**: The rigid bodies (chassis, wheel, arm segment).
+*   **Joints**: How links are connected (revolute, prismatic, fixed).
+
+```xml
+<robot name="my_robot">
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="0.6 0.4 0.2"/>
+      </geometry>
+    </visual>
+  </link>
+</robot>
+```
+
+## 2. Visualizing in RViz
+
+RViz is a 3D visualizer for ROS state. It subscribes to `/tf` (transforms) and `/robot_description` to render the model.
+
+## 3. Lab: Build a Mobile Robot
+
+We will define a 2-wheeled differential drive robot with a caster wheel.

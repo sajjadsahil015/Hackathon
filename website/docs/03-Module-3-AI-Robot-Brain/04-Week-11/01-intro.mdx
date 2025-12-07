@@ -14,6 +14,18 @@ description: Behavior Trees and Autonomy
   "Create a patrol application"
 ]} />
 
-## Decision Making
+## 1. State Machines vs Behavior Trees
 
-Reactive autonomy and complex state management.
+*   **Finite State Machines (FSM)**: Rigid states (Idle -> Moving -> Error). Hard to scale.
+*   **Behavior Trees (BT)**: Modular, hierarchical logic (Sequence, Fallback, Parallel). Used in Halo AI and Nav2.
+
+### BT Nodes
+*   **Action**: Do something (Move, Speak).
+*   **Condition**: Check something (IsBatteryLow?).
+*   **Control**: Logic flow (Sequence: Do A, then B).
+
+## 2. Lab: Security Patrol
+
+Create a Behavior Tree that:
+1.  Patrols Points A, B, C.
+2.  **Fallback**: If battery < 20%, go to Dock.

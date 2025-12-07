@@ -14,6 +14,19 @@ description: Gazebo Simulation
   "Write Gazebo plugins for custom logic"
 ]} />
 
-## Simulating Physics
+## 1. From URDF to SDF
 
-Gravity, friction, and sensor noise.
+Gazebo uses **SDF (Simulation Description Format)**. ROS 2 automatically converts URDF to SDF when spawning models.
+We must add `<gazebo>` tags to our URDF to define physics properties (friction, mass, inertia).
+
+## 2. Simulating Sensors
+
+A robot is blind without sensors. In Gazebo, we attach virtual sensors that publish to ROS topics.
+
+*   **Lidar**: Publishes `sensor_msgs/LaserScan`
+*   **Camera**: Publishes `sensor_msgs/Image`
+*   **IMU**: Publishes `sensor_msgs/Imu`
+
+## 3. Lab: Maze Run
+
+Spawn the robot in a maze world (`ros2 launch gazebo_ros gazebo.launch.py world:=maze.world`) and drive it using `teleop_twist_keyboard`.

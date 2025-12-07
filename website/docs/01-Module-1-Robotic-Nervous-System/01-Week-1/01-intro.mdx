@@ -14,14 +14,53 @@ description: Overview of The Robotic Nervous System
   "Run your first node"
 ]} />
 
-## Welcome to the Robotic Nervous System
+## 1. The Robotic Nervous System
 
-In this module, we will explore the fundamental communication layer of modern robotics.
+Just as a biological nervous system transmits signals between the brain and muscles, **ROS 2 (Robot Operating System)** acts as the middleware for robots. It allows different hardware components (Lidar, Motors, Cameras) to communicate with software algorithms (SLAM, Planning, Vision).
 
-### Installation
+### Key Concepts
+
+*   **Nodes**: Individual executable processes (e.g., `camera_driver`, `wheel_controller`).
+*   **Topics**: Streaming data pipes (Pub/Sub).
+*   **Services**: Request/Reply synchronous communication.
+*   **Actions**: Long-running goals with feedback.
+
+### 2. Hands-On: Installation
+
+We use **ROS 2 Humble Hawksbill**.
 
 <TerminalBlock commands={{
   linux: "sudo apt install ros-humble-desktop",
   windows: "choco install ros-humble-desktop",
   mac: "brew install ros-humble-desktop"
 }} />
+
+### 3. Lab: Running Turtlesim
+
+Turtlesim is the "Hello World" of ROS.
+
+```bash
+# Terminal 1: Start the simulation
+ros2 run turtlesim turtlesim_node
+
+# Terminal 2: Start the keyboard controller
+ros2 run turtlesim turtle_teleop_key
+```
+
+### 4. Code Example: Minimal Python Node
+
+```python
+import rclpy
+from rclpy.node import Node
+
+class MyNode(Node):
+    def __init__(self):
+        super().__init__('my_node')
+        self.get_logger().info('Hello ROS 2!')
+
+def main():
+    rclpy.init()
+    node = MyNode()
+    rclpy.spin(node)
+    rclpy.shutdown()
+```

@@ -14,6 +14,26 @@ description: Overview of The Digital Twin
   "Import a URDF model"
 ]} />
 
-## Simulating Reality
+## 1. Why Simulate?
 
-Before we break expensive hardware, we break virtual robots.
+Building robots is expensive and slow. Simulators allow us to:
+1.  **Iterate Fast**: Crash a virtual robot 1000 times for free.
+2.  **Train AI**: Generate synthetic data for ML models.
+3.  **Verify**: Test code before deploying to hardware.
+
+## 2. Simulator Landscape
+
+| Simulator | Best For | Engine |
+|-----------|----------|--------|
+| **Gazebo Classic** | Legacy ROS projects | OGRE |
+| **Gazebo (Ignition)** | Modern ROS 2 sim | OGRE2/Qt |
+| **NVIDIA Isaac Sim** | Photorealism & AI | Omniverse (RTX) |
+| **Unity** | VR/AR & Custom logic | Unity Engine |
+
+## 3. Lab: Installing Gazebo
+
+<TerminalBlock commands={{
+  linux: "sudo apt install ros-humble-gazebo-ros-pkgs",
+  windows: "wsl install ros-humble-gazebo-ros-pkgs",
+  mac: "brew install gazebo"
+}} />
