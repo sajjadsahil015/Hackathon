@@ -8,15 +8,15 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://interactive-robotics-textbook.github.io',
+  url: 'https://sajjadsahil015.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/Hackathon/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'interactive-robotics-textbook', // Usually your GitHub org/user name.
-  projectName: 'interactive-robotics-textbook', // Usually your repo name.
+  organizationName: 'sajjadsahil015', // Usually your GitHub org/user name.
+  projectName: 'Hackathon', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
